@@ -1,0 +1,27 @@
+.progress-bar-container {
+  margin-bottom: 10px;
+}
+
+.progress-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.progress-bar-wrapper {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  height: 20px;
+  position: relative;
+}
+
+.progress-bar-fill {
+  border-radius: 5px;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.progress-bar-fill.max-value {
+  background-color: #ff0000;
+}

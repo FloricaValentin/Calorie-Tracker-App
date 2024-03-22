@@ -1,0 +1,64 @@
+.Container {
+  max-width: 800px;
+  max-height: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.Header {
+  text-align: center;
+}
+
+.progress {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.row-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.progressCard {
+  width: calc(50% - 10px);
+}
+
+.component-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.progressBarContainer {
+  width: 100%;
+}
+
+.progressBarContainer > div {
+  width: 100%;
+}
+
+@media screen and (min-width: 376px) and (max-width: 667px) {
+  .Container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .progress {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .progressCard {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .component-container {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,24 @@
+.Container {
+  max-width: 800px;
+  max-height: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.Header {
+  text-align: center;
+}
+
+.Container label {
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width: 375px) and (max-width: 667px) {
+  .Container {
+    padding: 10px;
+    width: 90%;
+  }
+}
