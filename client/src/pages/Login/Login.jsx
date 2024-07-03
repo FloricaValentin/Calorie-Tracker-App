@@ -65,7 +65,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users/login",
+        "https://calorie-tracker-app-server.vercel.app/api/users/login",
         formData
       );
       const token = response.data.token;

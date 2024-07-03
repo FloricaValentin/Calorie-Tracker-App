@@ -56,7 +56,7 @@ const MealHistory = () => {
 
   const fetchAllFoods = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/foods/");
+      const response = await axios.get("https://calorie-tracker-app-server.vercel.app/api/foods/");
       setAllFoods(response.data.data.foods);
     } catch (error) {
       console.error("Error fetching all foods:", error);
@@ -90,7 +90,7 @@ const MealHistory = () => {
       if (removeFromDatabase && foodToDelete && foodToDelete._id) {
         try {
           await axios.delete(
-            `http://localhost:5000/api/foods/${foodToDelete._id}`
+            `https://calorie-tracker-app-server.vercel.app/api/foods/${foodToDelete._id}`
           );
         } catch (error) {
           console.error("Error deleting food from database:", error);
@@ -105,7 +105,7 @@ const MealHistory = () => {
       if (removeFromDatabase && addedFoods[index] && addedFoods[index]._id) {
         try {
           await axios.delete(
-            `http://localhost:5000/api/foods/${addedFoods[index]._id}`
+            `https://calorie-tracker-app-server.vercel.app/api/foods/${addedFoods[index]._id}`
           );
         } catch (error) {
           console.error("Error deleting food from database:", error);
@@ -194,7 +194,7 @@ const MealHistory = () => {
       return;
     }
     try {
-      await axios.post("http://localhost:5000/api/foods/", foodData);
+      await axios.post("https://calorie-tracker-app-server.vercel.app/api/foods/", foodData);
       setAddedFoods((prevFoods) => [...prevFoods, foodData]);
       setFoodData({
         name: "",

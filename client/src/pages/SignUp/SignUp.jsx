@@ -60,7 +60,7 @@ function SignUp() {
 
     if (formIsValid) {
       axios
-        .post("http://localhost:5000/api/users/", formData)
+        .post("https://calorie-tracker-app-server.vercel.app/api/users/", formData)
         .then((response) => {
           console.log("User created successfully:", response.data);
           setSuccessMessage("User created successfully");

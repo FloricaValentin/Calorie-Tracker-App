@@ -16,7 +16,7 @@ const SideBar = ({ isOpen, onCloseSidebar }) => {
         if (token) {
           const userId = getUserIdFromToken();
           const response = await axios.get(
-            `http://localhost:5000/api/users/${userId}`
+            `https://calorie-tracker-app-server.vercel.app/api/users/${userId}`
           );
           const userData = response.data;
           setUsername(userData.username);

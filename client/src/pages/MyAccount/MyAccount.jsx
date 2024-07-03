@@ -103,7 +103,7 @@ const MyAccount = () => {
       const updatedFormData = { ...formData, dailyCalorieGoal };
       setFormData(updatedFormData);
       const response = await axios.put(
-        `http://localhost:5000/api/infos/${userId}`,
+        `https://calorie-tracker-app-server.vercel.app/api/infos/${userId}`,
         updatedFormData
       );
       console.log("Updated user info:", response.data);

@@ -70,7 +70,7 @@ const ChangeCredentials = () => {
     try {
       const userId = getUserIdFromToken();
       const response = await fetch(
-        `http://localhost:5000/api/users/${userId}`,
+        `https://calorie-tracker-app-server.vercel.app/api/users/${userId}`,
         {
           method: "PUT",
           headers: {
