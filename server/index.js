@@ -8,28 +8,30 @@ const infoRoute = require("./routes/info.route.js");
 const Food = require("./models/foods.collection.js");
 const foodRoute = require("./routes/food.route.js");
 const cors = require('cors');
-
-
+require('dotenv').config(); // Load environment variables from .env file
 
 app.use(cors());
 app.use(express.json());
 
 // routes
-
 app.use("/api/users", userRoute);
 app.use("/api/infos", infoRoute);
-app.use("/api/foods", foodRoute)
+app.use("/api/foods", foodRoute);
 
-app.listen(5000, () => {
-  console.log('Server is running on port 5000');
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
+
 mongoose
-  .connect(
-    "mongodb+srv://vali:du3nYpX8RI7Wucal@cluster0.gcafdo9.mongodb.net/your-database-name?retryWrites=true&w=majority&appName=Cluster0"
-  )
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Connected to DB");
   })
-  .catch(() => {
-    console.log("Connection Failed");
+  .catch((error) => {
+    console.log("Connection Failed", error);
   });
